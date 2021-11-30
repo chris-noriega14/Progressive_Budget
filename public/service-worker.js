@@ -3,16 +3,21 @@ const DATA_CACHE_NAME = "data-cache-v1";
 
 const CACHEFILES = [
   '/',
-  '/index.html',
-  '/styles.css',
-  '/index.js',
-  '/indexeddb.js',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png',
+  './index.html',
+  './styles.css',
+  './index.js',
+  './indexeddb.js',
+  './manifest.json',
+  './icons/icon-192x192.png',
+  './icons/icon-512x512.png',
 ];
 
 // install
-self.addEventListener("install", (event) => {
+self.addEventListener("install", (event) => { 
+// pre cache image data
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.add("/api/images"))
+  );
 
   // pre cache all static files
   event.waitUntil(
