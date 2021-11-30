@@ -28,7 +28,7 @@ function checkDatabase() {
   // Open a transaction on the indexed db database "BudgetStore"
   let transaction = db.transaction(['BudgetStore'], 'readwrite');
 
-  // access the BudgetStore object
+  // Access the BudgetStore object
   const store = transaction.objectStore('BudgetStore');
 
   // Get all records from store using a created variable "getAll"
@@ -36,7 +36,7 @@ function checkDatabase() {
 
   // If the request to get all records was successful, run the function
   getAll.onsuccess = function () {
-    // If there are items in the store, we need to bulk add them when we are back online
+    // If there are items in the store, we need to add all items (bulk add) when we are back online
     if (getAll.result.length > 0) {
       fetch('/api/transaction/bulk', {
         method: 'POST',
@@ -69,7 +69,7 @@ request.onsuccess = function (e) {
   console.log('success');
   db = e.target.result;
 
-  // Check if app is online before reading from db
+  // Check if app is online before reading from the indexed db
   if (navigator.onLine) {
     console.log('Backend is online!');
     checkDatabase();
