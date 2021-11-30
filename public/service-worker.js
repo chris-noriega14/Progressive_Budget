@@ -1,13 +1,13 @@
-const CACHE_NAME = "static-cache-v2"; //Static Data -files
-const DATA_CACHE_NAME = "data-cache-v1"; //Back-end data - api
+const CACHE_NAME = "static-cache-v2";
+const DATA_CACHE_NAME = "data-cache-v1";
 
-const FILES_TO_CACHE = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/index.js",
-  "/icons/icon-192x192.png",
-  "/icons/icon-512x512.png",
+const CACHEFILES = [
+  '/',
+  '/index.html',
+  '/style.css',
+  '/index.js',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
 ];
 
 // install
@@ -15,7 +15,7 @@ self.addEventListener("install", (event) => {
 
   // pre cache all static files
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(CACHEFILES))
     .then(self.skipWaiting())
   ); 
 });
