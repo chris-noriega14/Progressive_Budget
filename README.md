@@ -12,8 +12,8 @@ The user can download this application on their desktop through a web manifest. 
 
 ## Screenshot of Deployed Application
 
-Link: https://github.com/chris-noriega14/Progressive_Budget/blob/main/screenshot-progressive-budget.png
+Screenshot: https://github.com/chris-noriega14/Progressive_Budget/blob/main/screenshot-progressive-budget.png
 
-GIF: 
+Video: https://github.com/chris-noriega14/Progressive_Budget/blob/main/progressive-budget-video.mp4?raw=true
 
 
